@@ -1,0 +1,8 @@
+# Jev question list (used when TEST_MODE=false).
+# Replace these with your own questions. Supported placeholders:
+#   {location} - the City/State passed to the API (e.g. "Austin, TX")
+#   {date}     - the date passed to the API (defaults to today, YYYY-MM-DD)
+questions:
+  - Is it currently hot in {location} for this time of the year?
+  - What is the current temperature in {location} on {date}?
+  - What is the median temperature for {location} historically?

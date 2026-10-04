@@ -1,0 +1,21 @@
+services:
+  jev:
+    build: .
+    env_file: .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./config:/app/config:ro
+
+  # Optional local SLM. Start with: docker compose --profile slm up
+  # then set SLM_URL=http://ollama:11434 and run: docker compose exec ollama ollama pull phi3:mini
+  ollama:
+    image: ollama/ollama:latest
+    profiles: ["slm"]
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama:/root/.ollama
+
+volumes:
+  ollama:
